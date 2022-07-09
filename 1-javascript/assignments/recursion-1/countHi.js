@@ -1,8 +1,12 @@
 function countHi(str){
-    let a = 0;
-  for (let i = 0; i < str.length; i++)
-   
-    if (str.substring(i, i + 2) == "hi") a++;
-  return a;
+    if(str.length == 0)
+    {
+        return 0;
+    }
+    if(str[0] == 'h' && str[1] == 'i')
+    {
+		return 1 + countHi(str.substring(1,str.length));
+    }
+	return countHi(str.substring(1,str.length));
   
 }
